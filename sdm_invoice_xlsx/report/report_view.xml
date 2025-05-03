@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_invoice_xlsx_report" model="ir.actions.report">
+        <field name="name">Invoice XLSX Report</field>
+        <field name="model">invoice.xlsx.wizard</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">sdm_invoice_xlsx.invoice_xlsx_template</field>
+        <field name="print_report_name">'Invoice_Report_%s' % (object.id)</field>
+    </record>
+</odoo>
