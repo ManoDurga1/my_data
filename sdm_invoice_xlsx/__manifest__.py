@@ -8,11 +8,12 @@
         """,
     'author': 'Mano Durga',
     'website': 'https://sidmectech.com',
-    'depends': ['account','report_xlsx'],
+    'depends': ['account','report_xlsx','sale','mail','base'],
     'data': [
         'security/ir.model.access.csv',
         'wizard/invoice_xlsx_wizard_view.xml',
         'report/report_view.xml',
+        'views/student_course_view.xml',
     ],
     'installable': True,
     'application': False,

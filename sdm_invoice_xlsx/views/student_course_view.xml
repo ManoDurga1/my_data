@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="view_form_student" model="ir.ui.view">
+    <field name="name">academy.student.form</field>
+    <field name="model">academy.student</field>
+    <field name="arch" type="xml">
+        <form string="Student">
+            <header>
+                    <button name="start_course" type="object" string="Start Course" class="btn-primary"
+                            invisible="course_state != 'draft'"/>
+                    <button name="complete_course" type="object" string="Complete Course" class="btn-success"
+                            invisible="course_state != 'in_progress'"/>
+                  <field name="course_state" widget="statusbar" statusbar_visible="draft,in_progress,completed"/>
+                </header>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="father_name"/>
+                    <field name="mother_name"/>
+                    <field name="mobile"/>
+                </group>
+
+            </sheet>
+            <chatter/>
+        </form>
+    </field>
+</record>
+
+<record id="view_tree_student" model="ir.ui.view">
+    <field name="name">academy.student.tree</field>
+    <field name="model">academy.student</field>
+    <field name="arch" type="xml">
+        <list string="Student">
+            <field name="name"/>
+            <field name="age"/>
+            <field name="father_name"/>
+            <field name="mother_name"/>
+            <field name="mobile"/>
+            <field name="course_state"/>
+        </list>
+    </field>
+</record>
+<record id="action_student" model="ir.actions.act_window">
+    <field name="name">Students</field>
+    <field name="res_model">academy.student</field>
+    <field name="view_mode">list,form</field>
+    <field name="view_id" ref="view_tree_student"/>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+            Create the first student
+        </p>
+    </field>
+</record>
+
+    <menuitem id="menu_academy_root" name="Academy" action="action_student" parent="sale.sale_order_menu"/>
+
+</odoo>
