@@ -1,0 +1,11 @@
+<odoo>
+    <data noupdate="1">
+        <record id="seq_sdm_extra_requirement" model="ir.sequence">
+            <field name="name">SDM Extra Requirement</field>
+            <field name="code">sdm.extra.requirement</field>
+            <field name="prefix">ER</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+        </record>
+    </data>
+</odoo>
